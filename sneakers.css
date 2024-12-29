@@ -217,7 +217,7 @@ button:active {
 }
 
 /* Informations de contact */
-.contact-info {
+.contact-nous {
   text-align: center;
   background-color: #fff;
   padding: 20px;
@@ -225,13 +225,13 @@ button:active {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info h3 {
+.contact-nous h3 {
   font-size: 1.5em;
   color: #2c3e50;
   margin-bottom: 10px;
 }
 
-.contact-info p {
+.contact-nous p {
   font-size: 1.1em;
   color: #555;
   margin: 5px 0;
