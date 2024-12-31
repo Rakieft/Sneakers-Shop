@@ -79,6 +79,36 @@ header nav a {
   .search-bar button:hover {
     background-color: #0056b3; 
   }
+
+  .cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cart-icon {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
 
 main {
@@ -236,35 +266,6 @@ button:active {
   color: #555;
   margin: 5px 0;
 }
-
-/* Responsive Design */
-/* @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    max-width: 100%;
-  }
-} */
-
-
-
-
-
-/* Global Styles */
-/* body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #f9fafc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
 
 /* Contact Section */
 .contact-section {
