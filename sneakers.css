@@ -365,7 +365,7 @@ button:active {
 .info-box figure {
   text-align: center;
   transition: transform 0.3s ease;
-  margin: 10px;
+  margin: 0.5px;
   width: 990px;
 }
 
@@ -392,7 +392,7 @@ button:active {
   animation: fadeInUp 1.2s ease-in-out;
 }
 
-/* Style général pour le tableau */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -405,7 +405,7 @@ table {
   overflow: hidden;
 }
 
-/* Style pour les en-têtes du tableau */
+
 table thead {
   background-color: #3498db;
   color: #fff;
@@ -419,7 +419,7 @@ table thead th {
   letter-spacing: 0.5px;
 }
 
-/* Style pour les lignes du tableau */
+
 table tbody tr {
   border-bottom: 1px solid #ddd;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -434,7 +434,7 @@ table tbody tr:hover {
   transform: scale(1.02);
 }
 
-/* Style pour les cellules */
+
 table td {
   padding: 12px;
   text-align: left;
@@ -451,14 +451,14 @@ table td:nth-child(2) {
   font-style: italic;
 }
 
-/* Responsive Table */
+
 @media (max-width: 768px) {
   table {
     font-size: 0.9em;
   }
 
   table thead {
-    display: none; /* Masquer les en-têtes sur les petits écrans */
+    display: none; 
   }
 
   table tbody tr {
@@ -488,7 +488,7 @@ table td:nth-child(2) {
 }
 
 
-/* Animations */
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -515,9 +515,9 @@ table td:nth-child(2) {
 
 .social-links{
   display: flex;
-  /* margin-left: 20px; */
-  float: right;
+  /* float: right; */
   margin-top: 1px;
+  margin-left: 20%;
 }
 
 .social-links a img {
@@ -525,6 +525,7 @@ table td:nth-child(2) {
   height: 40px;
   margin: -1px; 
   float: right;
+  margin-top: 5px;
   
 }
 
@@ -533,12 +534,16 @@ table td:nth-child(2) {
   margin-left: 20px;
 }
 
+footer p{
+  margin-left:40% ;
+}
+
 footer {
   background-color: #89CCF7;
   color: black;
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
-  /* padding: auto; */
+  display: flex;
 }
 
