@@ -1,59 +1,39 @@
-// Sélection des éléments importants
-const cartCountElement = document.querySelector('.cart-count');
-const cartItems = [];
+let panier = [];
 
 // Fonction pour ajouter un produit au panier
-function addToCart(productCard) {
-    const productName = productCard.querySelector('h3').textContent;
-    const productPrice = productCard.querySelector('.price').textContent;
-    const productSize = productCard.querySelector('p:nth-child(4)').textContent;
-    const productImage = productCard.querySelector('img').src;
-
-    // Création de l'objet produit
-    const product = {
-        name: productName,
-        price: productPrice,
-        size: productSize,
-        image: productImage,
-    };
-
-    // Ajouter au tableau du panier
-    cartItems.push(product);
-
-    // Mettre à jour le compteur du panier
-    updateCartCount();
-
-    // Afficher un message de confirmation
-    alert(`${productName} a été ajouté au panier !`);
+function ajouterAuPanier(produit) {
+    panier.push(produit);
+    mettreAJourPanier();
 }
 
-// Fonction pour mettre à jour le compteur du panier
-function updateCartCount() {
-    cartCountElement.textContent = cartItems.length;
+// Fonction pour mettre à jour l'icône du panier
+function mettreAJourPanier() {
+    const panierCount = document.getElementById('panier-count');
+    panierCount.textContent = panier.length;  // Mise à jour du nombre d'articles dans le panier
 }
 
-// Fonction pour afficher les détails du panier
-function showCartDetails() {
-    if (cartItems.length === 0) {
-        alert("Votre panier est vide.");
-        return;
-    }
-
-    let cartDetails = "Voici votre panier :\n\n";
-    cartItems.forEach((item, index) => {
-        cartDetails += `${index + 1}. ${item.name} - ${item.price} - ${item.size}\n`;
-    });
-
-    alert(cartDetails);
-}
-
-// Ajout des événements aux boutons "Commander"
-document.querySelectorAll('.product-card button').forEach((button) => {
-    button.addEventListener('click', (event) => {
-        const productCard = event.target.closest('.product-card');
-        addToCart(productCard);
+// Fonction appelée lorsque l'utilisateur clique sur "Commander"
+document.querySelectorAll('.commander-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const produit = {
+            nom: this.previousElementSibling.previousElementSibling.textContent,  // Nom du produit
+            prix: this.previousElementSibling.textContent.split(": ")[1],  // Prix du produit
+            taille: this.previousElementSibling.previousElementSibling.previousElementSibling.textContent.split(": ")[1]  // Taille
+        };
+        ajouterAuPanier(produit);
     });
 });
 
-// Ajout d'un événement au clic sur l'icône du panier pour afficher les détails
-document.querySelector('.cart-icon').addEventListener('click', showCartDetails);
+// Fonction pour afficher le contenu du panier
+function afficherPanier() {
+    const panierDetails = document.getElementById('panier-details');
+    panierDetails.innerHTML = '';  // Réinitialiser le panier avant d'ajouter les articles
+    panier.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.textContent = `${item.nom} - ${item.taille} - ${item.prix}€`;
+        panierDetails.appendChild(itemDiv);
+    });
+}
+
+// Exemple d'ouverture du panier (en cliquant sur l'icône du panier)
+document.querySelector('.panier').addEventListener('click', afficherPanier);
